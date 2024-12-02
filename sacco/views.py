@@ -47,8 +47,8 @@ def delete_customer(request, customer_id):
     return redirect('customers')  # Redirects back to customers page and will load again
 
 
-def customer_details(request,customer_id):
+def customer_details(request, customer_id):
     customer = Customer.objects.get(id=customer_id)
     deposits = Deposit.objects.filter(customer_id=customer_id)
 
-    return render(request, 'details.html',{"deposits":deposits},{"customer":customer})
+    return render(request, "details.html",{"deposits":deposits},{"customer":customer})
