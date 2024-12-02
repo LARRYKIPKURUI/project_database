@@ -34,3 +34,5 @@ class Deposit(models.Model):
 # run the migrations (this will create the tables)
 # python manage.py makemigrations
 # python manage.py migrate
+
+#python manage.py populate
