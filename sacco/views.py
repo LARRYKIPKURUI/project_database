@@ -1,6 +1,7 @@
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.db.models import Q
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from pyexpat.errors import messages
@@ -44,11 +45,19 @@ def customers(request):
     return render(request, "customers.html", {"data": paginated_data})
 
 @login_required
+@permission_required("sacco.delete_customer", raise_exception=True)
 def delete_customer(request, customer_id):
     customer = Customer.objects.get(id=customer_id)
     customer.delete()
     # messages.info(request,f"Customer {customer.first_name} was deleted!!")
     return redirect('customers')  # Redirects back to customers page and will load again
+
+@login_required
+@permission_required("sacco.view_customer", raise_exception=True)
+def search_customer(request):
+    search_term = request.GET.get('search')
+    data = Customer.objects.filter( Q(first_name__icontains=search_term) | Q(last_name__icontains=search_term) | Q(email__icontains=search_term)  )
+    return render(request, "search.html", {"customers": data})
 
 @login_required
 def customer_details(request, customer_id):
@@ -58,6 +67,7 @@ def customer_details(request, customer_id):
     return render(request, "details.html",{"deposits":deposits},{"customer":customer})
 
 @login_required
+@permission_required("sacco.add_customer", raise_exception=True)
 def add_customer(request):
     if request.method == "POST":
         form = CustomerForm(request.POST,request.FILES)
