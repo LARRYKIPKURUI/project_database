@@ -7,7 +7,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0210a68-9092-41a8-b6d1-c45d6354b6a1" name="Changes" comment="" />
+    <list default="true" id="c0210a68-9092-41a8-b6d1-c45d6354b6a1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sacco/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/sacco/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sacco/app_forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/sacco/app_forms.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -110,6 +115,7 @@
       <workItem from="1733118893082" duration="7875000" />
       <workItem from="1733127550141" duration="3861000" />
       <workItem from="1733167121139" duration="7170000" />
+      <workItem from="1733384375144" duration="602000" />
     </task>
     <servers />
   </component>

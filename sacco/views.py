@@ -2,7 +2,7 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
-from sacco.app_forms import CustomerForm
+from sacco.app_forms import CustomerForm, LoginForm
 from sacco.models import Customer, Deposit
 
 
@@ -62,3 +62,13 @@ def add_customer(request):
 
 #pip install django-crispy-forms
 #pip install crispy-bootstrap5
+
+
+def login_user(request):
+    form = LoginForm()
+    return render(request , 'login.html',{'form':form})
+
+
+def logout_user(request):
+
+    return render(request)

@@ -42,3 +42,5 @@ admin.site.register(Deposit, DepositAdmin)
 # 123456
 
 # localhost:8000/admin
+
+# 1a2Bc9*33aa!!
